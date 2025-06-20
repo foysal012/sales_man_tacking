@@ -140,7 +140,6 @@ class _LocationTrackingPageState extends State<LocationTrackingPage> {
 
     } catch (e) {
       debugPrint('⚠️ Error checking permissions: $e');
-      // Show error to user
       // ScaffoldMessenger.of(context).showSnackBar(
       //   SnackBar(
       //     content: Text('Error accessing location: ${e.toString()}'),
@@ -255,7 +254,7 @@ class _LocationTrackingPageState extends State<LocationTrackingPage> {
       setState(() {
         _isTracking = false;
         _isPaused = false;
-        _locations = [];
+        // _locations = [];
       });
     }
   }
@@ -272,7 +271,11 @@ class _LocationTrackingPageState extends State<LocationTrackingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Location Tracker'),
+        title: const Text('Location Tracker', style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 22
+        ),),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
@@ -379,7 +382,6 @@ class _LocationTrackingPageState extends State<LocationTrackingPage> {
                     : FutureBuilder(
                   future: _loadLocations(),
                   builder: (context, snapshot) {
-                    // final location = _locations[index];
                     if(snapshot.error == true){
                       return Text("Something Went Wrong");
                     } else {
