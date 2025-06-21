@@ -284,6 +284,7 @@ class _LocationTrackingPageState extends State<LocationTrackingPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
 // Status Indicator
             Text(
                 _isTracking
@@ -298,6 +299,7 @@ class _LocationTrackingPageState extends State<LocationTrackingPage> {
                 )
             ),
             const SizedBox(height: 20),
+
 // Control Buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -367,6 +369,7 @@ class _LocationTrackingPageState extends State<LocationTrackingPage> {
               ],
             ),
             const SizedBox(height: 20),
+
 // Location List
             Expanded(
                 child: _locations.isEmpty
